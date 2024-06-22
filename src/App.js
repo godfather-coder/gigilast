@@ -26,23 +26,25 @@ import FitnessDetail from './component/pages/fitnessDetails.js';
 function App() {
   const {setData} = useContext(DataContext)
   const fetchUserData = async () => {
-    auth.onAuthStateChanged(async (user) => {
+   auth.onAuthStateChanged(async (user) => {
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
-            setUserDetails(docSnap.data());
             Cookies.set('myKey', user.uid)
             setData(true)
         } else {
             console.log("User is not logged in");
         }
     });
+  
 };
 useEffect(() => {
     if(Cookies.get('myKey')){
       setData(true)
+      fetchUserData();
     }
-    fetchUserData();
+      
+    
 }, []);
   return (
     <Router>
