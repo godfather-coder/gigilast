@@ -65,6 +65,7 @@
 
   .navbar-menu.open {
     display: flex;
+    margin-top: 90px;
   }
 
   .navbar-item {

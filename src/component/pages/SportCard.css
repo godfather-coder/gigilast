@@ -36,4 +36,8 @@
     transform: rotate(5deg);
     transition: transform 0.3s;
   }
-  
+  .spc{
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }

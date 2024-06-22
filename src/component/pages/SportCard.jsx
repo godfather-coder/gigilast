@@ -17,7 +17,7 @@ const SportCard = ({ complex,satc,onRemove }) => {
       <p>Price: ${complex.price}</p>
       <div>
         <h4>Spaces:</h4>
-        <ul>
+        <ul className='spc'>
           {complex.spaces.map((space, index) => (
             <li key={index}>{space}</li>
           ))}
